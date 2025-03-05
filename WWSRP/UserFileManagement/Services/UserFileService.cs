@@ -1,14 +1,13 @@
-﻿
-using WWSRP.UserManagement;
+﻿using WWSRP.Users.Models;
 
-namespace WWSRP.FileManagement
+namespace WWSRP.UserFileManagement.Services
 {
-    public class UserFileController
+    public class UserFileService
     {
 
         private readonly List<User> _users;
 
-        public UserFileController(List<User> users)
+        public UserFileService(List<User> users)
         {
             _users = users;
         }

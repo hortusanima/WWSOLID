@@ -1,6 +1,6 @@
-﻿using OCP.Shape;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Models
 {
     public class Rectangle : IShape
     {
@@ -9,7 +9,7 @@ namespace OCP.Shapes
 
         public double CalculateArea()
         {
-            return this.Length * this.Width;
+            return Length * Width;
         }
     }
 }

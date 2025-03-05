@@ -1,5 +1,6 @@
-﻿
-namespace WWSRP.UserManagement
+﻿using WWSRP.Users.Models;
+
+namespace WWSRP.Users.Controllers
 {
 	public class UserController
 	{

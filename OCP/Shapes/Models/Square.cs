@@ -1,6 +1,6 @@
-﻿using OCP.Shape;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Models
 {
     class Square : IShape
     {
@@ -8,7 +8,7 @@ namespace OCP.Shapes
 
         public double CalculateArea()
         {
-            return this.Side * this.Side;
+            return Side * Side;
         }
     }
 }

@@ -1,11 +1,6 @@
-﻿using OCP.Shape;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Services
 {
     public class ShapeAreaCalculator
     {

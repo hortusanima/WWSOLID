@@ -1,4 +1,5 @@
-﻿using OCP.Shapes;
+﻿using OCP.Shapes.Models;
+using OCP.Shapes.Services;
 
 var circle = new Circle { Radius = 5 };
 var rectangle = new Rectangle { Length = 4, Width = 6 };

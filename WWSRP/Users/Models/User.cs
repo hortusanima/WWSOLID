@@ -1,5 +1,4 @@
-﻿
-namespace WWSRP.UserManagement
+﻿namespace WWSRP.Users.Models
 {
     public class User
     {
