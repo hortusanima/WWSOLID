@@ -1,4 +1,4 @@
-﻿using WWSRP;
+﻿using WWSRP.UserManagement;
 
-UserManagement userManagement = new UserManagement();
+UserController userManagement = new UserController();
 
