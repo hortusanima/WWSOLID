@@ -1,4 +1,4 @@
-﻿namespace OCP.Shape
+﻿namespace OCP.Shapes.Interfaces
 {
     public interface IShape
     {

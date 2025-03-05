@@ -1,11 +1,6 @@
-﻿using OCP.Shape;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Models
 {
     public class Trapezoid : IShape
     {
@@ -15,7 +10,7 @@ namespace OCP.Shapes
 
         public double CalculateArea()
         {
-            return 1.5 * (this.FirstBase + this.SecondBase) * this.Height;
+            return 1.5 * (FirstBase + SecondBase) * Height;
         }
     }
 }

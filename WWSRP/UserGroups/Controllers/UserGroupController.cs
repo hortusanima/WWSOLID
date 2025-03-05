@@ -1,6 +1,7 @@
-﻿using WWSRP.UserManagement;
+﻿using WWSRP.UserGroups.Models;
+using WWSRP.Users.Models;
 
-namespace WWSRP.UserGroup
+namespace WWSRP.UserGroups.Controllers
 {
     public class UserGroupController
     {

@@ -1,6 +1,6 @@
-﻿using OCP.Shape;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Models
 {
     class Triangle : IShape
     {
@@ -9,7 +9,7 @@ namespace OCP.Shapes
 
         public double CalculateArea()
         {
-            return 0.5 * this.Base * this.Height;
+            return 0.5 * Base * Height;
         }
     }
 }

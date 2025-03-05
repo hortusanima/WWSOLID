@@ -1,6 +1,6 @@
-﻿using OCP.Shape;
+﻿using OCP.Shapes.Interfaces;
 
-namespace OCP.Shapes
+namespace OCP.Shapes.Models
 {
     public class Circle : IShape
     {
@@ -8,7 +8,7 @@ namespace OCP.Shapes
 
         public double CalculateArea()
         {
-            return Math.PI * this.Radius * this.Radius;
+            return Math.PI * Radius * Radius;
         }
     }
 }
