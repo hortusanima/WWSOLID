@@ -13,7 +13,6 @@ namespace WWSRP.UserGroup
             _userGroups = userGroups;
         }
 
-        // CHANGED
         public void CreateGroup(string name)
         {
             if (!_userGroups.Any(x => x.Name == name))
@@ -27,7 +26,6 @@ namespace WWSRP.UserGroup
             }
         }
 
-        // CHANGED
         public void AddUserToGroup(string username, string groupName)
         {
             var userGroup = _userGroups.FirstOrDefault(x => x.Name == groupName);
@@ -59,7 +57,6 @@ namespace WWSRP.UserGroup
             }
         }
 
-        // CHANGED
         public void RemoveUserFromGroup(string username, string groupName)
         {
             var userGroup = _userGroups.FirstOrDefault(x => x.Name == groupName);

@@ -10,27 +10,19 @@ namespace WWSRP.UserManagement
 			_users = userData;
 		}
 
-		// CHANGED
-		public void AddUser(string username, string password)
+		public void AddUser(User user)
 		{
-			if (!_users.Any(x=> x.Name == username))
+			if (!_users.Any(x=> x.Name == user.Name))
 			{
-				User user = new User
-				{
-					Name = username,
-					Password = password
-				};
-
 				_users.Add(user);
-				Console.WriteLine($"User {username} added.");
+				Console.WriteLine($"User {user.Name} added.");
 			}
 			else
 			{
-				Console.WriteLine($"User {username} already exists.");
+				Console.WriteLine($"User {user.Name} already exists.");
 			}
 		}
 
-		// CHANGED
 		public void UpdateUserPassword(string username, string newPassword)
 		{
 			var user = _users.FirstOrDefault(x => x.Name == username);
@@ -46,7 +38,6 @@ namespace WWSRP.UserManagement
 			}
 		}
 
-		// CHANGED
 		public void DeleteUser(string username)
 		{
             var user = _users.FirstOrDefault(x => x.Name == username);
@@ -62,11 +53,10 @@ namespace WWSRP.UserManagement
 			}
 		}
 
-		// CHANGED
-		public void AuthenticateUser(string username, string password)
+		public void AuthenticateUser(User user)
 		{
-			var user = _users.FirstOrDefault(x => x.Name == username);
-            if (user!= null && user.Password == password)
+			var userToAuthenticate = _users.FirstOrDefault(x => x.Name == user.Name);
+            if (user!= null && user.Password == userToAuthenticate.Password)
 			{
 				Console.WriteLine("User authenticated.");
 			}
@@ -76,7 +66,6 @@ namespace WWSRP.UserManagement
 			}
 		}
 
-		// CHANGED
 		public void DisplayAllUsers()
 		{
 			if (_users.Count > 0)
