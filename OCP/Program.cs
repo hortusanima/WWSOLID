@@ -7,17 +7,24 @@ var square = new Square { Side = 4 };
 var triangle = new Triangle { Base = 4, Height = 6 };
 var hexagon = new Hexagon { Side = 2 };
 var trapezoid = new Trapezoid { FirstBase = 6, SecondBase = 3, Height = 3 };
+var cube = new Cube { Side = 5 };
 
-var circleCalculator = new ShapeAreaCalculator(circle);
-var rectangleCalculator = new ShapeAreaCalculator(rectangle);
-var squareCalculator = new ShapeAreaCalculator(square);
-var triangleCalculator = new ShapeAreaCalculator(triangle);
-var hexagonCalculator = new ShapeAreaCalculator(hexagon);
-var trapezoidCalculator = new ShapeAreaCalculator(trapezoid);
+var circleAreaCalculator = new ShapeAreaCalculator(circle);
+var rectangleAreaCalculator = new ShapeAreaCalculator(rectangle);
+var squareAreaCalculator = new ShapeAreaCalculator(square);
+var triangleAreaCalculator = new ShapeAreaCalculator(triangle);
+var hexagonAreaCalculator = new ShapeAreaCalculator(hexagon);
+var trapezoidAreaCalculator = new ShapeAreaCalculator(trapezoid);
+var cubeAreaCalculator = new ShapeAreaCalculator(cube);
 
-Console.WriteLine(circleCalculator.DisplayArea());
-Console.WriteLine(rectangleCalculator.DisplayArea());
-Console.WriteLine(squareCalculator.DisplayArea());
-Console.WriteLine(triangleCalculator.DisplayArea());
-Console.WriteLine(hexagonCalculator.DisplayArea());
-Console.WriteLine(trapezoidCalculator.DisplayArea());
+var cubeVolumeCalculator = new ShapeVolumeCalculator(cube);
+
+Console.WriteLine(circleAreaCalculator.DisplayArea());
+Console.WriteLine(rectangleAreaCalculator.DisplayArea());
+Console.WriteLine(squareAreaCalculator.DisplayArea());
+Console.WriteLine(triangleAreaCalculator.DisplayArea());
+Console.WriteLine(hexagonAreaCalculator.DisplayArea());
+Console.WriteLine(trapezoidAreaCalculator.DisplayArea());
+Console.WriteLine(cubeAreaCalculator.DisplayArea());
+
+Console.WriteLine(cubeVolumeCalculator.DisplayVolume());
