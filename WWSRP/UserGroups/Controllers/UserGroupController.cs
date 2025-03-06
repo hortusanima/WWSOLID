@@ -1,5 +1,4 @@
-﻿using WWSRP.UserGroups.Helpers;
-using WWSRP.UserGroups.Models;
+﻿using WWSRP.UserGroups.Models;
 using WWSRP.Users.Models;
 
 namespace WWSRP.UserGroups.Controllers
