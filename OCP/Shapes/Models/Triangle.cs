@@ -2,7 +2,7 @@
 
 namespace OCP.Shapes.Models
 {
-    class Triangle : IShape
+    class Triangle : I2DShape
     {
         public double Base { get; set; }
         public double Height { get; set; }

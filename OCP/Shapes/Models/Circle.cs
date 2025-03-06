@@ -2,7 +2,7 @@
 
 namespace OCP.Shapes.Models
 {
-    public class Circle : IShape
+    public class Circle : I2DShape
     {
         public double Radius { get; set; }
 

@@ -2,7 +2,7 @@
 
 namespace OCP.Shapes.Models
 {
-    class Square : IShape
+    class Square : I2DShape
     {
         public double Side { get; set; }
 

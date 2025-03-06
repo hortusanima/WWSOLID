@@ -2,7 +2,7 @@
 
 namespace OCP.Shapes.Models
 {
-    public class Hexagon : IShape
+    public class Hexagon : I2DShape
     {
         public double Side { get; set; }
 

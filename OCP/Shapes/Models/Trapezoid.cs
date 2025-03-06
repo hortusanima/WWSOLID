@@ -2,7 +2,7 @@
 
 namespace OCP.Shapes.Models
 {
-    public class Trapezoid : IShape
+    public class Trapezoid : I2DShape
     {
         public double FirstBase { get; set; }
         public double SecondBase { get; set; }

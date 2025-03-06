@@ -4,9 +4,9 @@ namespace OCP.Shapes.Services
 {
     public class ShapeAreaCalculator
     {
-        private readonly IShape _shape;
+        private readonly I2DShape _shape;
 
-        public ShapeAreaCalculator(IShape shape)
+        public ShapeAreaCalculator(I2DShape shape)
         {
             _shape = shape;
         }
