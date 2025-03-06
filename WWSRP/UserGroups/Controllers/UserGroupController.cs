@@ -1,4 +1,5 @@
-﻿using WWSRP.UserGroups.Models;
+﻿using WWSRP.UserGroups.Helpers;
+using WWSRP.UserGroups.Models;
 using WWSRP.Users.Models;
 
 namespace WWSRP.UserGroups.Controllers
@@ -14,22 +15,37 @@ namespace WWSRP.UserGroups.Controllers
             _userGroups = userGroups;
         }
 
-        public void CreateGroup(string name)
+        public User? GetUserByName(string username)
         {
-            if (!_userGroups.Any(x => x.Name == name))
+            return _users.FirstOrDefault(x => x.Name == username);
+        }
+
+        public UserGroup? GetUserGroupByName(string groupName)
+        {
+            return _userGroups.FirstOrDefault(x => x.Name == groupName);
+        }
+
+        public User? GetUserInGroupByName(UserGroup userGroup, string username)
+        {
+            return userGroup.Participants.FirstOrDefault(x => x.Name == username);
+        }
+
+        public void CreateGroup(string groupName)
+        {
+            if (!_userGroups.Any(x => x.Name == groupName))
             {
-                _userGroups.Add(new UserGroup { Name = name });
-                Console.WriteLine($"User group {name} added.");
+                _userGroups.Add(new UserGroup { Name = groupName });
+                Console.WriteLine($"User group {groupName} added.");
             }
             else
             {
-                Console.WriteLine($"User group {name} already exists.");
+                Console.WriteLine($"User group {groupName} already exists.");
             }
         }
 
         public void AddUserToGroup(string username, string groupName)
         {
-            var userGroup = _userGroups.FirstOrDefault(x => x.Name == groupName);
+            var userGroup = GetUserGroupByName(groupName);
 
             if (userGroup == null)
             {
@@ -37,10 +53,10 @@ namespace WWSRP.UserGroups.Controllers
                 return;
             }
 
-            var userInGroup = userGroup.Participants.FirstOrDefault(x => x.Name == username);
+            var userInGroup = GetUserInGroupByName(userGroup, username);
             if (userInGroup == null)
             {
-                var user = _users.FirstOrDefault(x => x.Name == username);
+                var user = GetUserByName(username);
 
                 if(user != null)
                 {
@@ -60,7 +76,7 @@ namespace WWSRP.UserGroups.Controllers
 
         public void RemoveUserFromGroup(string username, string groupName)
         {
-            var userGroup = _userGroups.FirstOrDefault(x => x.Name == groupName);
+            var userGroup = GetUserGroupByName(groupName);
 
             if (userGroup == null)
             {
@@ -68,7 +84,7 @@ namespace WWSRP.UserGroups.Controllers
                 return;
             }
 
-            var userInGroup = userGroup.Participants.FirstOrDefault(x => x.Name == username);
+            var userInGroup = GetUserInGroupByName(userGroup, username);
             if (userInGroup != null)
             {
                 userGroup.Participants.Remove(userInGroup);

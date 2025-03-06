@@ -11,9 +11,14 @@ namespace WWSRP.Users.Controllers
 			_users = userData;
 		}
 
+		public User? GetUserByName(string username)
+		{
+			return _users.FirstOrDefault(x => x.Name == username);
+		}
+
 		public void AddUser(User user)
 		{
-			if (!_users.Any(x=> x.Name == user.Name))
+			if (!_users.Any(x => x.Name == user.Name))
 			{
 				_users.Add(user);
 				Console.WriteLine($"User {user.Name} added.");
@@ -26,7 +31,7 @@ namespace WWSRP.Users.Controllers
 
 		public void UpdateUserPassword(string username, string newPassword)
 		{
-			var user = _users.FirstOrDefault(x => x.Name == username);
+			var user = GetUserByName(username);
 
             if (user != null)
 			{
@@ -41,7 +46,7 @@ namespace WWSRP.Users.Controllers
 
 		public void DeleteUser(string username)
 		{
-            var user = _users.FirstOrDefault(x => x.Name == username);
+            var user = GetUserByName(username);
 
             if (user != null)
 			{
@@ -56,7 +61,8 @@ namespace WWSRP.Users.Controllers
 
 		public void AuthenticateUser(User user)
 		{
-			var userToAuthenticate = _users.FirstOrDefault(x => x.Name == user.Name);
+			var userToAuthenticate = GetUserByName(user.Name);
+
             if (user!= null && user.Password == userToAuthenticate.Password)
 			{
 				Console.WriteLine("User authenticated.");
